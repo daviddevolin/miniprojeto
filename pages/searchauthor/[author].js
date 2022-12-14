@@ -21,7 +21,7 @@ export default function AuthorSearch(){
         clearFilters();
         setSearchText('');
       };
-    const {data, error} = useSWR(`http://openlibrary.org/search.json?author=${author}`, fetcher);
+    const {data, error} = useSWR(`https://openlibrary.org/search.json?author=${author}`, fetcher);
     if (error) return <div>falha na requisição...</div>
     if (!data) return <div>carregando...</div>
     if (data.Response=="False")return<div>autor não encontrado...</div>

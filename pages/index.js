@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Form, Input } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-import Head from 'next/head';
 import "antd/dist/antd.css";
 export default function Search(){
     const onFinish =()=>{
@@ -31,12 +30,6 @@ export default function Search(){
     };
     return(
         <div>
-            <Head>
-                <meta
-                http-equiv="Content-Security-Policy"
-                content="upgrade-insecure-requests"
-                />
-            </Head>
             <Form form={form} name="dynamic_rule" onFinish={onFinish}>
                 <Form.Item
                     {...formItemLayout}
