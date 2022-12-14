@@ -44,7 +44,8 @@ export default function AuthorSearch(){
             dataIndex: 'first_publish_year',
             key: 'first_publish_year',
             width: '20%',
-            
+            defaultSortOrder: 'descend',
+            sorter: (a, b) => a.first_publish_year - b.first_publish_year
            
         },
         {
