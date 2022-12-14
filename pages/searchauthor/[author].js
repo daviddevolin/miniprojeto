@@ -2,7 +2,7 @@ import useSWR from 'swr';
 import { useRouter } from 'next/router';
 import { Card, Table, Space, Button} from 'antd';
 import React, { useState } from 'react';
-
+import { SearchOutlined } from '@ant-design/icons';
 import "antd/dist/antd.css";
 
 export default function AuthorSearch(){
@@ -14,6 +14,8 @@ export default function AuthorSearch(){
     if (!data) return <div>carregando...</div>
     if (data.Response=="False")return<div>autor não encontrado...</div>
     
+    
+
     const array= data.docs;
     console.log(array)
 
@@ -37,7 +39,9 @@ export default function AuthorSearch(){
             dataIndex: 'title',
             key: 'tile',
             width: '30%',
-
+            
+            sorter: (a, b) => a.title.localeCompare(b.title),
+            sortDirections: ['descend', 'ascend'],
         },
         {
             title: 'First_publish_year',
