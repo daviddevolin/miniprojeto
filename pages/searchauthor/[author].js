@@ -36,9 +36,12 @@ export default function AuthorSearch(){
     array.forEach((element,index) => {
             
         data2[index] = {
+            key:index,
             title: element.title,
             first_publish_year: element.first_publish_year,
-            author_name: element.author_name
+            author_name: element.author_name,
+            cover_i: element.cover_i,
+            img:`https://covers.openlibrary.org/b/id/${element.cover_i}-L.jpg`
         }
     });
 
@@ -177,7 +180,14 @@ export default function AuthorSearch(){
             >
                 
             </Space>
-            <Table dataSource={data2} columns={columns} />
+            <Table 
+              columns={columns} 
+              expandable={{
+                expandedRowRender: (record) => <img src={`${record.img}`}/>,
+                rowExpandable: (record) => record.cover_i >0,
+              }}
+              dataSource={data2}
+            />
         </>
     )
 }
