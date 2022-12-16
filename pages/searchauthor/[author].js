@@ -1,10 +1,11 @@
 import useSWR from 'swr';
 import { useRouter } from 'next/router';
-import { Card, Table, Space, Button, Input} from 'antd';
+import {  Spin, Table, Space, Button, Input} from 'antd';
 import React, { useRef, useState } from 'react';
 import { SearchOutlined } from '@ant-design/icons';
 import Highlighter from 'react-highlight-words';
 import "antd/dist/antd.css";
+
 
 export default function AuthorSearch(){
     const router = useRouter();
@@ -23,7 +24,8 @@ export default function AuthorSearch(){
       };
     const {data, error} = useSWR(`https://openlibrary.org/search.json?author=${author}`, fetcher);
     if (error) return <div>falha na requisição...</div>
-    if (!data) return <div>carregando...</div>
+    if (!data) return (
+      <div>carrganndo...</div>)
     if (data.Response=="False")return<div>autor não encontrado...</div>
     
     
