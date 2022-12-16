@@ -34,7 +34,7 @@ export default function Search(){
     };
     return(
         <div>
-            <Layout className="layout">
+            <Layout className="layout" style={{minHeight:'100vh'}}>
                 <Header>
                     <div className="logo" />
                     <Menu
