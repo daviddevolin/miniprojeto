@@ -96,7 +96,7 @@ export default function Search(){
                     textAlign: 'center',
                     }}
                 >
-                    ©2022 Created by David Santos and João vitor
+                    ©2022 Created by David Santos
                 </Footer>
             </Layout>
         </div>
